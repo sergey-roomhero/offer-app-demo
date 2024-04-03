@@ -20,7 +20,6 @@
   color: #f09142;
   counter-increment: stepNum;
   display: table-cell;
-  font-size: 16px;
   position: relative;
   text-align: center;
 }
@@ -43,6 +42,9 @@
   text-align: center;
   width: 32px;
 }
+.op-progress > li:first-child:before {
+  margin: 0;
+}
 .op-progress > li:after {
   background-color: #f09142;
   content: "";
@@ -62,7 +64,7 @@
   color: #ffffff;
 }
 .op-progress > li.is-active ~ li {
-  color: #808080;
+  color: var(--base-light__border);
 }
 .op-progress > li.is-active ~ li:before {
   background-color: #ededed;
