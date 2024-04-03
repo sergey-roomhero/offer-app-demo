@@ -19,5 +19,5 @@ Promise.all([clientsDataPromise, productsDataPromise, ordersDataPromise])
 
   })
   .catch((error) => {
-    console.error("Произошла ошибка при загрузке данных:", error);
+    console.error("An error occurred while loading data:", error);
   });
