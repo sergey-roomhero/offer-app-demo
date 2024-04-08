@@ -1,4 +1,9 @@
 /* Progress stepper styles */
+.op-progress {
+  display: flex;
+  width: 100%;
+
+}
 .op-progress > li.is-active ~ li:before,
 .op-progress > li.is-active:before {
   content: counter(stepNum);
@@ -7,66 +12,65 @@
 }
 .op-progress > li.is-active ~ li:after,
 .op-progress > li.is-active:after {
-  background-color: #ededed;
+  background-color: var(--base-disable__light);
 }
 
-.op-progress {
-  display: table;
-  margin-bottom: 40px;
-  table-layout: fixed;
-  width: 100%;
-}
+
 .op-progress > li {
-  color: #f09142;
+  color:var(--primary-main);
+  flex-grow: 1;
   counter-increment: stepNum;
-  display: table-cell;
+  display: flex;
+  flex-direction:column;
   position: relative;
   text-align: center;
 }
 .op-progress > li:before {
-  background-color: #ffffff;
-  border-color: #f09142;
+  background-color: var(--primary-main);
+  color:white;
   border-radius: 50%;
-  border-style: solid;
-  border-width: 2px;
   content: "";
   content: "✓;";
   content: "𐀃";
   content: "𐀄";
   content: "✓";
   display: block;
-  font-weight: bold;
-  height: 32px;
+  height: 2rem;
+  width: 2rem;
   line-height: 32px;
+  margin-bottom:0.5rem;
   margin: 0 auto 4px;
   text-align: center;
-  width: 32px;
+
 }
-.op-progress > li:first-child:before {
-  margin: 0;
-}
+
 .op-progress > li:after {
-  background-color: #f09142;
+  background-color: var(--primary-main);
   content: "";
   height: 2px;
-  left: 50%;
   position: absolute;
   top: 16px;
   width: 100%;
   z-index: -1;
+  left:50%;
 }
+
+.op-progress > li.is-active:before {
+  background-color: var(--primary-main);
+  border-color: var(--primary-main);
+  color: white;
+}
+.op-progress > li.is-active ~ li {
+  color: var(--base-disable__light);
+}
+.op-progress > li.is-active ~ li:before {
+  background-color: var(--base-light__surface);
+  color:var(--base-disable__light);
+  border: solid 2px var(--base-disable__light);
+}
+
 .op-progress > li:last-child:after {
   display: none;
 }
-.op-progress > li.is-active:before {
-  background-color: #f09142;
-  border-color: #f09142;
-  color: #ffffff;
-}
-.op-progress > li.is-active ~ li {
-  color: var(--base-light__border);
-}
-.op-progress > li.is-active ~ li:before {
-  background-color: #ededed;
-  border-color: #f09142;
-}
+/* Progress details styles */
+.op-progress-details
